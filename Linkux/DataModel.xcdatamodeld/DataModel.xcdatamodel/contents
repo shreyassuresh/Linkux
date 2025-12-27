@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValue="0.0" usesScalarValueType="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValue="0.0" usesScalarValueType="YES"/>
+        <relationship name="linksFrom" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NoteLink" inverseName="fromNote" inverseEntity="NoteLink"/>
+        <relationship name="linksTo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NoteLink" inverseName="toNote" inverseEntity="NoteLink"/>
+    </entity>
+    <entity name="NoteLink" representedClassName="NoteLink" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="strength" optional="YES" attributeType="Double" defaultValue="1.0" usesScalarValueType="YES"/>
+        <relationship name="fromNote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="linksFrom" inverseEntity="Note"/>
+        <relationship name="toNote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="linksTo" inverseEntity="Note"/>
+    </entity>
+</model>
