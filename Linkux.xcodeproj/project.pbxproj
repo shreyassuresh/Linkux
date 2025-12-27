@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E579EAA2EFFE0F10057C49F /* LinkSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E579EA92EFFE0F10057C49F /* LinkSuggestion.swift */; };
 		A1000001 /* LinkuxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002 /* LinkuxApp.swift */; };
 		A1000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004 /* ContentView.swift */; };
 		A1000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000006 /* Assets.xcassets */; };
@@ -19,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1000014 /* Linkux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkux.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E579EA92EFFE0F10057C49F /* LinkSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkSuggestion.swift; sourceTree = "<group>"; };
 		A1000002 /* LinkuxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkuxApp.swift; sourceTree = "<group>"; };
 		A1000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1000006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 		A100000F /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		A1000011 /* NoteNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNodeView.swift; sourceTree = "<group>"; };
 		A1000013 /* NoteEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorView.swift; sourceTree = "<group>"; };
+		A1000014 /* Linkux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				A1000002 /* LinkuxApp.swift */,
+				3E579EA92EFFE0F10057C49F /* LinkSuggestion.swift */,
 				A1000004 /* ContentView.swift */,
 				A100000D /* MLService.swift */,
 				A100000F /* GraphViewModel.swift */,
@@ -157,6 +160,7 @@
 				A1000001 /* LinkuxApp.swift in Sources */,
 				A100000C /* MLService.swift in Sources */,
 				A100000E /* GraphViewModel.swift in Sources */,
+				3E579EAA2EFFE0F10057C49F /* LinkSuggestion.swift in Sources */,
 				A1000010 /* NoteNodeView.swift in Sources */,
 				A1000012 /* NoteEditorView.swift in Sources */,
 			);
@@ -375,7 +379,6 @@
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
-
 	};
 	rootObject = A100001E /* Project object */;
 }

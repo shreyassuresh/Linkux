@@ -3,7 +3,10 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @StateObject private var graphViewModel: GraphViewModel
+    @StateObject private var graphViewModel: GraphViewModel = GraphViewModel(
+        context: PersistenceController.shared.container.viewContext
+    )
+
     @State private var showingNoteEditor = false
     @State private var editingNote: Note?
     
@@ -63,17 +66,20 @@ struct ContentView: View {
                 .scaleEffect(graphViewModel.scale)
                 .offset(graphViewModel.offset)
                 .gesture(
-                    SimultaneousGesture(
-                        MagnificationGesture()
-                            .onChanged { value in
-                                graphViewModel.scale = value
-                            },
-                        DragGesture()
-                            .onChanged { value in
-                                graphViewModel.offset = value.translation
-                            }
-                    )
+                    MagnificationGesture()
+                        .onChanged { value in
+                            graphViewModel.scale = value
+                        }
                 )
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            graphViewModel.offset = value.translation
+                        }
+                )
+
+//                    )
+                
                 
                 // AI Suggestions Panel
                 if !graphViewModel.suggestedLinks.isEmpty {
@@ -113,9 +119,13 @@ struct ContentView: View {
     
     private func screenToCanvas(_ point: CGPoint, in geometry: GeometryProxy) -> CGPoint {
         let adjustedPoint = CGPoint(
-            x: (point.x - graphViewModel.offset.x) / graphViewModel.scale,
-            y: (point.y - graphViewModel.offset.y) / graphViewModel.scale
+            x: (point.x - graphViewModel.offset.width) / graphViewModel.scale,
+            y: (point.y - graphViewModel.offset.height) / graphViewModel.scale
         )
         return adjustedPoint
     }
+}
+
+#Preview {
+    ContentView()
 }
